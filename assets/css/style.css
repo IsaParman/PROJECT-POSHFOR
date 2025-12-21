@@ -175,11 +175,6 @@ nav a:focus-visible,
     position: relative;
 }
 
-/* Label Products */
-.dropdown-label {
-    cursor: pointer;
-}
-
 /* Panel default (hidden) */
 .dropdown-panel {
     position: absolute;
@@ -194,15 +189,6 @@ nav a:focus-visible,
     transform: translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease;
     z-index: 300;
-}
-
-/* Title */
-.dropdown-title {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 0 20px 12px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #e5e5e5;
 }
 
 /* List */
@@ -233,14 +219,20 @@ nav a:focus-visible,
     transform: translateY(0);
 }
 .nav-link {
+    position: relative;
+    text-decoration: none;
     color: rgba(255,255,255,0.8);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
+    padding: 6px 0;
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #1e88e5;
 }
+
 
 /* =====================
    HEADER RESPONSIVE
@@ -953,3 +945,102 @@ nav a:focus-visible,
         max-width: 100%;
     }
 }
+/* =====================
+   PRODUCT HERO CONTENT
+===================== */
+.product-hero-content {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.product-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* IMAGE */
+.product-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* TEXT */
+.product-hero-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.product-hero-text > p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+/* FEATURE LIST */
+.product-feature-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.product-feature-list li {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.product-feature-list strong {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-feature-list p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 4px;
+}
+
+/* DOT ICON */
+.product-feature-list .dot {
+    width: 12px;
+    height: 12px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+/* =====================
+   PRODUCT REVERSE LAYOUT
+===================== */
+.product-reverse .product-hero-grid {
+    grid-template-columns: 1.1fr 1fr;
+}
+
+.product-reverse .product-hero-text {
+    order: 1;
+}
+
+.product-reverse .product-hero-image {
+    order: 2;
+}
+
+/* Mobile tetap stack */
+@media (max-width: 768px) {
+    .product-reverse .product-hero-text,
+    .product-reverse .product-hero-image {
+        order: initial;
+    }
+}
+@media (max-width: 768px) {
+    .product-hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
