@@ -550,25 +550,77 @@ nav a:focus-visible,
     font-weight: 600;
 }
 /* =====================
-   HERO 4 – PRODUCT HIGHLIGHT
+   HIGHLIGHT VISUAL SECTION
 ===================== */
-.product-highlight {
-    background: #ffffff;
+.highlight-visual {
+    padding: 120px 0;
 }
 
-.highlight-box {
-    background: #e0e0e0;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 900px;
+.highlight-visual-inner {
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 80px 90px;
     text-align: center;
+
+    background-image: url("/assets/images/hero/product-highlight.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
 }
 
-.highlight-box p {
+/* Overlay */
+.highlight-visual-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 90, 160, 0.75); /* biru transparan */
+    z-index: 1;
+}
+
+/* Content */
+.highlight-visual-inner > * {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-visual-inner p {
+    color: #ffffff;
     font-size: 14px;
-    line-height: 1.7;
-    color: #333;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 20px;
+}
+
+/* Button */
+.btn-light {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 26px;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #1e1e1e;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-light:hover {
+    background: #f2f2f2;
+}
+@media (max-width: 768px) {
+
+    .highlight-visual-inner {
+        padding: 60px 30px;
+        border-radius: 22px;
+    }
+
+    .highlight-visual-inner p {
+        font-size: 13px;
+    }
 }
 /* =====================
    HERO 5 – SERVICES
