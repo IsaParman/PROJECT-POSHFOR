@@ -1,0 +1,19 @@
+/* Hero Section 1 */
+/* Responsiveness untuk Mobile */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 40px;
+    }
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .top-bar {
+        margin-bottom: 10px;
+    }
+}
