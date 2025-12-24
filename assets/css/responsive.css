@@ -1,19 +1,242 @@
-/* Hero Section 1 */
-/* Responsiveness untuk Mobile */
-@media (max-width: 768px) {
-    .content h1 {
-        font-size: 40px;
+/* =========================================================
+   RESPONSIVE.CSS
+   Project: POSHFLOR
+   Purpose: Tablet & Mobile Optimization (SEO SAFE)
+========================================================= */
+
+
+/* =========================================================
+   ≤ 1200px — SMALL DESKTOP / LAPTOP
+========================================================= */
+@media (max-width: 1200px) {
+
+    .container {
+      max-width: 1100px;
     }
-    .nav-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+  
+    .hero-content p {
+      max-width: 560px;
     }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+  
+    .product-hero-grid,
+    .about-intro-grid,
+    .hero-two-grid {
+      gap: 50px;
     }
-    .top-bar {
-        margin-bottom: 10px;
+  
+  }
+  
+  
+  /* =========================================================
+     ≤ 1024px — TABLET LANDSCAPE
+  ========================================================= */
+  @media (max-width: 1024px) {
+  
+    /* GRID ADJUSTMENT */
+    .catalog-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
-}
+  
+    .product-grid,
+    .service-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    /* TYPOGRAPHY */
+    h1 {
+      font-size: clamp(32px, 5vw, 54px);
+    }
+  
+    h2 {
+      font-size: clamp(26px, 4vw, 36px);
+    }
+  
+    /* SPACING */
+    .section,
+    .about-intro,
+    .about-experience,
+    .about-vision-mission,
+    .about-values,
+    .product-hero-content {
+      padding: 80px 0;
+    }
+  
+    /* HEADER */
+    header {
+      padding: 16px 0;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     ≤ 768px — TABLET / MOBILE
+  ========================================================= */
+  @media (max-width: 768px) {
+  
+    /* GLOBAL */
+    body {
+      font-size: 14px;
+    }
+  
+    /* CONTAINER */
+    .container {
+      width: 92%;
+    }
+  
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+    }
+  
+    .hero-content {
+      margin-top: 120px;
+    }
+  
+    .hero-content p {
+      max-width: 100%;
+      font-size: 14px;
+    }
+  
+    /* ABOUT HERO */
+    .about-hero {
+      min-height: 320px;
+      padding-top: 140px;
+    }
+  
+    /* GRID STACK */
+    .about-intro-grid,
+    .hero-two-grid,
+    .product-hero-grid,
+    .vm-grid,
+    .values-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  
+    /* IMAGE ORDER FIX */
+    .product-reverse .product-hero-image {
+      order: -1;
+    }
+  
+    /* CARD GRID */
+    .catalog-grid,
+    .product-grid,
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* CLIENT LOGO */
+    .client-grid {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    /* TEXT */
+    h1 {
+      font-size: 34px;
+    }
+  
+    h2 {
+      font-size: 26px;
+    }
+  
+    p {
+      line-height: 1.8;
+    }
+  
+    /* BUTTON */
+    .btn-message,
+    .btn-browse,
+    .btn-light {
+      padding: 10px 22px;
+    }
+  
+    /* SECTION SPACING */
+    .section {
+      padding: 70px 0;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     ≤ 480px — MOBILE
+  ========================================================= */
+  @media (max-width: 480px) {
+  
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+    }
+  
+    .hero-content h1 {
+      font-size: 30px;
+      line-height: 1.15;
+    }
+  
+    /* GRID — SINGLE COLUMN */
+    .catalog-grid,
+    .product-grid,
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    /* CARD */
+    .catalog-card,
+    .service-item {
+      border-radius: 14px;
+    }
+  
+    /* BUTTON FULL WIDTH */
+    .btn-message,
+    .btn-browse {
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* IMAGE */
+    .product-item img,
+    .service-item img {
+      aspect-ratio: 4 / 3;
+    }
+  
+    /* FOOTER */
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+  
+    /* SECTION SPACING */
+    .section,
+    .about-intro,
+    .about-experience,
+    .about-vision-mission,
+    .about-values {
+      padding: 60px 0;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     ≤ 360px — SMALL MOBILE (SAFETY)
+  ========================================================= */
+  @media (max-width: 360px) {
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+  }
+  
