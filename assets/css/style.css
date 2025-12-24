@@ -55,7 +55,7 @@ h2 {
 .catalog-card,
 .service-item {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 5px;
   overflow: hidden;
   transition: all .4s ease;
 }
