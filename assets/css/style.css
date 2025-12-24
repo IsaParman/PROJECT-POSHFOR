@@ -27,14 +27,19 @@ h2 {
   h2 strong {
     color: #000000;
   }
-  
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* =====================
    UI UX
 ===================== */
 .catalog-card,
 .service-item,
 .experience-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .catalog-card:hover {
@@ -57,7 +62,6 @@ h2 {
   background: #fff;
   border-radius: 5px;
   overflow: hidden;
-  transition: all .4s ease;
 }
 
 .catalog-card:hover,
@@ -775,7 +779,7 @@ nav a:focus-visible,
     color: #000;
 }
 
-.values-grid {
+.home-values-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -800,7 +804,8 @@ nav a:focus-visible,
 
     .product-grid,
     .service-grid,
-    .values-grid {
+    .home-values-grid,
+    .about-values-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1019,7 +1024,7 @@ nav a:focus-visible,
     background: #fff;
 }
 
-.values-grid {
+.about-values-grid {
     max-width: 900px;
     margin: 0 auto;
     display: grid;
@@ -1048,7 +1053,8 @@ nav a:focus-visible,
 
     .experience-grid,
     .vm-grid,
-    .values-grid {
+    .home-values-grid,
+    .about-values-grid {
         grid-template-columns: 1fr;
         gap: 50px;
     }
@@ -1235,7 +1241,7 @@ nav a:focus-visible,
 ========================= */
 .catalog-hero {
     height: 350px;
-    padding-top: 140px; /* FIX: offset header absolute */
+    padding-top: 160px; /* FIX: offset header absolute */
     display: flex;
     align-items: center;
     color: #ffffff;
@@ -1492,4 +1498,3 @@ nav a:focus-visible,
     font-size: 22px;
     margin-bottom: 35px;
 }
-
