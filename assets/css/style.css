@@ -568,7 +568,7 @@ nav a:focus-visible,
 ===================== */
 .section {
     /* padding: 90px 0; */
-    padding: clamp(70px, 10vw, 120px) 0;
+    padding: clamp(70px, 10vw, 70px) 0;
   }
 
 .text-center {
