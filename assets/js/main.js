@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loadHTML("footer-container", "/partials/footer.html");
   
     /* =====================
-       SCROLL REVEAL
+       SCROLL  
     ===================== */
-    const reveals = document.querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+    const  s = document.querySelectorAll(
+      ". , . -left, . -right, . -zoom"
     );
   
     const observer = new IntersectionObserver(entries => {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.15 });
   
-    reveals.forEach(el => observer.observe(el));
+     s.forEach(el => observer.observe(el));
   
   });
   
