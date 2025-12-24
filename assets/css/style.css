@@ -1167,3 +1167,266 @@ nav a:focus-visible,
         gap: 50px;
     }
 }
+
+/* =========================
+   CATALOG HERO (FINAL)
+========================= */
+.catalog-hero {
+    height: 350px;
+    padding-top: 140px; /* FIX: offset header absolute */
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+/* overlay gelap */
+.catalog-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* content */
+.catalog-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.catalog-hero .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.catalog-hero h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* HERO BACKGROUND PER PAGE */
+.carpet-tile-hero {
+    background-image: url("/assets/images/hero/carpet-tile.jpg");
+}
+
+/* =========================
+   CATALOG SECTION
+========================= */
+.catalog-section {
+    padding: 70px 0;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.catalog-card {
+    text-align: left;
+}
+
+/* IMAGE / PLACEHOLDER */
+.product-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* TEXT */
+.catalog-card p {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.catalog-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+.catalog-card:hover .product-thumb {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+.catalog-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .catalog-link:hover h3 {
+    text-decoration: underline;
+  }
+  
+
+/* =========================
+   PAGINATION
+========================= */
+.catalog-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 60px;
+    font-size: 13px;
+    color: #777;
+}
+
+.catalog-pagination span {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.catalog-pagination span:hover {
+    color: #000;
+}
+
+.catalog-pagination .active {
+    color: #000;
+    font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .catalog-hero {
+        height: 240px;
+    }
+
+    .catalog-hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-section {
+        padding: 50px 0;
+    }
+}
+
+/* =========================
+   PRODUCT DETAIL
+========================= */
+.product-top {
+    padding: 50px 0;
+}
+
+.product-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* GALLERY */
+.product-main-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.product-thumbnails .thumb {
+    width: 70px;
+    height: 70px;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.product-thumbnails .placeholder {
+    opacity: 0.4;
+}
+
+/* INFO */
+.product-category {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.product-info h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.spec-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.spec-table td:first-child {
+    width: 45%;
+    background: #f7f7f7;
+}
+
+/* INSTALLATION & CERT */
+.installation-method,
+.certification {
+    margin-bottom: 25px;
+}
+
+.install-icons span,
+.cert-icons span {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #ddd;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 11px;
+}
+
+/* RELATED */
+.related-product {
+    padding: 70px 0;
+}
+
+.related-product h2 {
+    font-size: 22px;
+    margin-bottom: 35px;
+}
