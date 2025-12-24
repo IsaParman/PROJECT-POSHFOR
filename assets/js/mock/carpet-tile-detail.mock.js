@@ -11,10 +11,9 @@ if (!productSlug) {
   alert("Product not found");
 }
 
-document.querySelectorAll(".product-thumbnails .thumb").forEach(thumb => {
-    thumb.addEventListener("click", () => {
-      const main = document.querySelector(".product-main-image");
-      main.style.backgroundImage = thumb.style.backgroundImage;
-    });
+document.querySelectorAll(".product-thumbnails .thumb").forEach((thumb) => {
+  thumb.addEventListener("click", () => {
+    const main = document.querySelector(".product-main-image");
+    main.style.backgroundImage = thumb.style.backgroundImage;
   });
-
+});

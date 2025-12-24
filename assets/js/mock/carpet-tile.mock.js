@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Step up", slug: "step-up" },
     { name: "Structure", slug: "structure" },
     { name: "Broom", slug: "broom" },
-    { name: "Lane Street", slug: "lane-street" }
+    { name: "Lane Street", slug: "lane-street" },
   ];
 
-  grid.innerHTML = products.map(p => `
+  grid.innerHTML = products
+    .map(
+      (p) => `
     <a href="/products/carpet-tile-detail.html?product=${p.slug}"
        class="catalog-link">
 
@@ -28,5 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </article>
 
     </a>
-  `).join("");
+  `
+    )
+    .join("");
 });

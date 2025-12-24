@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   /* =====================
      LOAD HEADER & FOOTER
   ===================== */
@@ -8,20 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!element) return;
 
     fetch(filePath, { cache: "no-store" })
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error(`Failed to load ${filePath}`);
         return res.text();
       })
-      .then(html => {
+      .then((html) => {
         element.innerHTML = html;
         if (typeof callback === "function") callback();
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }
 
   function setActiveMenu() {
     const currentPage = location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll("nav a").forEach(link => {
+    document.querySelectorAll("nav a").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === currentPage || href === `/${currentPage}`) {
         link.classList.add("active");
@@ -41,19 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach((el) => observer.observe(el));
   } else {
     /* Fallback: langsung aktif */
-    animatedElements.forEach(el => el.classList.add("active"));
+    animatedElements.forEach((el) => el.classList.add("active"));
   }
-
 });
