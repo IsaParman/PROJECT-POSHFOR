@@ -30,31 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadHTML("header-container", "/partials/header.html", setActiveMenu);
   loadHTML("footer-container", "/partials/footer.html");
-
-  /* =====================
-     SCROLL ANIMATION (FIX)
-  ===================== */
-
-  const animatedElements = document.querySelectorAll(
-    ".fade-up, .fade-left, .fade-right, .fade-zoom"
-  );
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    animatedElements.forEach((el) => observer.observe(el));
-  } else {
-    /* Fallback: langsung aktif */
-    animatedElements.forEach((el) => el.classList.add("active"));
-  }
 });

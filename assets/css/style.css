@@ -164,7 +164,7 @@ nav ul {
   gap: 32px;
 }
 
-nav ul li a {
+nav ul li > a {
   position: relative;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
@@ -175,7 +175,7 @@ nav ul li a {
 }
 
 /* Underline effect */
-nav ul li a::after {
+/* nav ul li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -184,7 +184,7 @@ nav ul li a::after {
   height: 2px;
   background-color: #1e88e5;
   transition: width 0.3s ease;
-}
+} */
 
 nav ul li a:hover,
 nav ul li a.active {
@@ -212,7 +212,7 @@ nav ul li a.active::after {
 
 .btn-message:hover {
   background-color: #0d47a1;
-  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 /* ACCESSIBILITY */
@@ -253,7 +253,7 @@ nav a:focus-visible,
 .dropdown-list li {
   display: block;
 }
-.dropdown-list li a {
+.dropdown-list li > a {
   display: block;
   padding: 10px 20px;
   font-size: 14px;
@@ -320,6 +320,10 @@ nav a:focus-visible,
   padding-bottom: 40px;
 }
 
+.footer-grid > div {
+  min-width: 0;
+}
+
 /* About */
 .footer-logo {
   width: 120px;
@@ -348,7 +352,7 @@ nav a:focus-visible,
   margin-bottom: 10px;
 }
 
-.footer-nav ul li a {
+.footer-nav ul li > a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.9);
   transition: opacity 0.3s;
@@ -365,7 +369,7 @@ nav a:focus-visible,
   margin-top: 10px;
 }
 
-.footer-social-icons a {
+.footer-social-icons > a {
   display: inline-flex;
   align-items: center;
 }
@@ -655,7 +659,7 @@ nav a:focus-visible,
 .highlight-visual-inner p {
   color: #ffffff;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.6;
   max-width: 760px;
   margin: 0 auto 20px;
 }
@@ -684,6 +688,7 @@ nav a:focus-visible,
 
   .highlight-visual-inner p {
     font-size: 13px;
+    line-height: 1.75;
   }
 }
 /* =====================
