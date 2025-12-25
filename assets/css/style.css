@@ -16,10 +16,13 @@ html {
 body {
   background-color: #ffffff;
   color: #000000;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
-
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 h2 {
   letter-spacing: -0.02em;
 }
@@ -137,20 +140,6 @@ header.is-sticky {
 .logo-link:hover .main-logo-img {
   opacity: 0.85;
   transform: translateY(-1px);
-}
-
-/* ICONS */
-.top-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.circle {
-  width: 14px;
-  height: 14px;
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 0.9;
 }
 
 /* DIVIDER */
@@ -370,18 +359,28 @@ nav a:focus-visible,
 }
 
 /* Social Media */
-.social-icons {
+.footer-social-icons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.social-icons a {
-  width: 14px;
-  height: 14px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: inline-block;
+.footer-social-icons a {
+  display: inline-flex;
+  align-items: center;
 }
+
+.footer-social-icons img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.9;
+}
+
+.footer-social-icons a:hover img {
+  opacity: 1;
+}
+
 
 /* Bottom Footer */
 .footer-bottom {
@@ -442,7 +441,7 @@ nav a:focus-visible,
 }
 
 .hero-content h1 {
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(38px, 2vw, 64px);
   font-weight: 300;
   line-height: 1.1;
   margin-bottom: 20px;
