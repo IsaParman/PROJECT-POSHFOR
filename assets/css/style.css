@@ -35,7 +35,15 @@ img {
   height: auto;
   display: block;
 }
+p {
+  line-height: 1.6;
+}
 
+@media (max-width: 768px) {
+  p {
+    line-height: 1.75;
+  }
+}
 /* =====================
    UI UX
 ===================== */
@@ -68,8 +76,9 @@ img {
 }
 
 .catalog-card:hover,
-.service-item:hover {
-  transform: translateY(-8px);
+.service-item:hover,
+.portfolio-item:hover {
+  transform: translateY(-3px);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 .btn-message,
@@ -1226,6 +1235,11 @@ nav a:focus-visible,
 
 .contact-form button {
   width: 100%;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #1e88e5;
+  outline-offset: 2px;
 }
 
 /* RESPONSIVE */
