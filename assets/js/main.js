@@ -49,3 +49,30 @@ const observer = new IntersectionObserver(
 );
 
 fadeElements.forEach((el) => observer.observe(el));
+
+  const cards = document.querySelectorAll('.pf-card');
+  const grid = document.querySelector('.pf-grid');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+
+      const idx = card.dataset.index;
+
+      // reset semua
+      cards.forEach(c => c.classList.remove('is-active'));
+
+      card.classList.add('is-active');
+
+      // ubah layout grid
+      if (idx == 0) {
+        grid.style.gridTemplateColumns = "2.2fr 1fr 1fr";
+      }
+      if (idx == 1) {
+        grid.style.gridTemplateColumns = "1fr 2.2fr 1fr";
+      }
+      if (idx == 2) {
+        grid.style.gridTemplateColumns = "1fr 1fr 2.2fr";
+      }
+    });
+  });
+

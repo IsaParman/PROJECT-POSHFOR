@@ -19,7 +19,9 @@ body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -294,6 +296,20 @@ nav a:focus-visible,
 .nav-link.active {
   color: #1e88e5;
 }
+.lang-switch {
+  font-size: 13px;
+  opacity: 0.8;
+  background-color: white;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+.lang-switch a.active {
+  font-weight: 600;
+}
 
 /* =====================
    HEADER RESPONSIVE
@@ -393,7 +409,6 @@ nav a:focus-visible,
 .footer-social-icons a:hover img {
   opacity: 1;
 }
-
 
 /* Bottom Footer */
 .footer-bottom {
@@ -1605,4 +1620,149 @@ nav a:focus-visible,
 .related-product h2 {
   font-size: 22px;
   margin-bottom: 35px;
+}
+
+/* =====================
+   GRID – fokus ke LEBAR
+===================== */
+.pf-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 1fr;
+  gap: 28px;
+  align-items: start;
+  transition: grid-template-columns 0.5s ease;
+}
+
+/* =====================
+   CARD
+===================== */
+.pf-card {
+  position: relative;
+  cursor: pointer;
+}
+
+/* =====================
+   IMAGE – TINGGI DIKUNCI
+===================== */
+.pf-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+/* =====================
+   INFO
+===================== */
+.pf-info {
+  padding-top: 12px;
+}
+
+/* =====================
+   DETAIL (HIDDEN DEFAULT)
+===================== */
+.pf-info p,
+.btn-detail {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.35s ease, max-height 0.35s ease;
+}
+
+/* AKTIF → detail muncul */
+.pf-card.is-active .pf-info p,
+.pf-card.is-active .btn-detail {
+  opacity: 1;
+  max-height: 120px;
+}
+
+/* =====================
+   ARROW (INACTIVE ONLY)
+===================== */
+.pf-arrow {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: #fff;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  pointer-events: none; /* klik tetap ke card */
+  z-index: 2;
+}
+
+/* INACTIVE → arrow muncul */
+.pf-card:not(.is-active) .pf-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hover effect (desktop) */
+.pf-card:not(.is-active):hover .pf-arrow {
+  background: #000;
+  color: #fff;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn-detail {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-detail:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* =====================
+   ACCESSIBILITY & PERF
+===================== */
+@media (prefers-reduced-motion: reduce) {
+  .pf-grid,
+  .pf-info p,
+  .btn-detail,
+  .pf-arrow {
+    transition: none;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 900px) {
+  .pf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-card img {
+    height: 240px;
+  }
+
+  .pf-arrow {
+    display: none;
+  }
+
+  .pf-info p,
+  .btn-detail {
+    opacity: 1;
+    max-height: none;
+  }
 }
